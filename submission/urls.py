@@ -8,6 +8,9 @@ app_name = 'submission'
 urlpatterns = [
     path('', views.index, name='index'),
     path('confession/', views.saved, name='saved'),
+    path('advertising/', views.advertising, name='advertising'),
+    path('business/', views.business, name='business'),
+    path('about/', views.about, name='about'),
 ]  + static(MEDIA_URL, document_root=MEDIA_ROOT)
 
 urlpatterns += static(STATIC_URL, document_root=STATIC_ROOT)

@@ -16,3 +16,14 @@ def saved(request):
         newTweet.save()
         return redirect('submission:index')
 
+def advertising(request):
+    context = {}
+    return render(request, 'submission/advertising.html', context)
+
+def business(request):
+    context = {}
+    return render(request, 'submission/business.html', context)
+
+def about(request):
+    context = {}
+    return render(request, 'submission/about.html', context)
