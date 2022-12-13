@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="index.css">
+  <title>TweetWave</title>
+  <style>
+    #main {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transform: translate(-50%, -50%);
+    }
+
+    input[type="file"]::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    input[type="file"]+label {
+      color: white;
+      background-color: blue;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .d-inline-block {
+      white-space: nowrap;
+    }
+
+    a {
+      color: grey;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      height: 50px;
+    }
+
+  </style>
+</head>
+
+<body class="container">
+  <main role="main" id="main">
+    <h1>
+      <a href="{% url 'submission:index' %}">
+        TweetWave
+      </a>
+    </h1>
+    <form class="form p-1" action="{% url 'submission:saved' %}" style="width: 700px" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <!-- <div class="row"> -->
+        <!-- <div class="col-10"> -->
+          <input type="text" id="tweet" class="form-control w-100" name="tweet" placeholder="Enter your submission">
+        <!-- </div> -->
+        <!-- <div class="col-2"> -->
+          <!-- <input type="file" id="attachment" name="attachment" class="fas fa-paperclip fa-lg"> -->
+        <!-- </div> -->
+        <input type="submit" value="Submit" class="btn btn-primary mt-3">
+      <!-- </div> -->
+    </form>
+  </main>
+  <footer class="p-3 fixed-bottom container-fluid bg-dark">
+    <p class="d-inline-block mx-5">
+      <a href="{% url 'users:signin' %}">Advertising</a>
+    </p>
+    <p class="d-inline-block mx-5">
+      <a href="{% url 'users:signin' %}">Business</a>
+    </p>
+    <p class="d-inline-block mx-5">
+      <a href="{% url 'users:signin' %}">About</a>
+    </p>
+    <p class="d-inline-block mx-5 float-right" style="color: white">
+      Copyright 2022
+      <a href="{% url 'users:signin' %}">TweetWave</a>
+    </p>
+  </footer>
+</body>
+
+</html>

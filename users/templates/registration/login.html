@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Login</title>
+    </head>
+    <body class="container">
+        <header class="p-3">
+            <h1>TweetWave</h1>
+        </header>
+        <main role="main container">
+            <form method="POST" action="{% url 'users:signin' %}" class="form-control p-5">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" class="w-100 form-control" id="username" name="username" placeholder="Enter your username" Required>
+                <br>
+                <label for="password">Password</label>
+                <input type="password" class="w-100 form-control" id="password" name="password" placeholder="Enter Your Password" Required>
+                <br>
+                <button name="submit" class="btn btn-primary">Login</button>
+                <input type="hidden" name="next" value="{% url 'moderator:index' %}">
+            </form>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        TweetWave - Admin
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="icon" href="{% static 'tweetwave.ico' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <style>
+        #container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            height: 100vh;
+            overflow: hidden;
+            position: fixed;
+            float: left;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            color: white;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #444;
+        }
+
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+
+        #main {
+            width: 75%;
+            padding: 20px;
+            margin-left: 270px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 270px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        p,
+        ol,
+        ul {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="sidebar">
+            <h2>
+                <a href="{% url 'submission:index' %}">TweetWave</a>
+            </h2>
+            <ul class="list-unstyled mt-4">
+                <li class="mb-3"><a href="{% url 'moderator:index' %}" class="text-white"><i
+                            class="fas fa-home fa-lg mr-2"></i>Home</a></li>
+                <li class="mb-3"><a href="{% url 'moderator:pending' %}" class="text-white"><i
+                            class="fas fa-hourglass fa-lg mr-2"></i>Pending</a></li>
+                <li class="mb-4"><a href="{% url 'moderator:approved' %}" class="text-white"><i
+                            class="fas fa-check-circle fa-lg mr-2"></i>Approved</a></li>
+                <li class="mb-4">
+                    <a href="{% url 'moderator:flagged' %}" class="text-white d-inline"><i
+                            class="fas fa-flag fa-lg mr-2"></i>Flagged
+                        <span class="badge badge-secondary counter badge-pill d-inline">{{ number }}</span>
+                    </a>
+                </li>
+                <li><a href="{% url 'users:signout' %}" class="text-white"><i
+                            class="fas fa-window-close fa-lg mr-2"></i>Log Out</a></li>               
+            </ul>
+        </div>
+        <div id="main">
+                {% block content %}
+                {% endblock content %}
+        </div>
+        <footer class="p-3 fixed-bottom container footer">
+            <p>Copyright 2022 TweetWave</p>
+        </footer>
+    </div>
+</body>
+</html>
