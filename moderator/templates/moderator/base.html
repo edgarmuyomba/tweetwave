@@ -12,84 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
-    <link rel="icon" href="{% static 'tweetwave.ico' %}">
+    <link rel="icon" href="{% static 'moderator/img/tweetwave.ico' %}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
-    <style>
-        #container {
-            display: flex;
-        }
-
-        .sidebar {
-            width: 250px;
-            background-color: #333;
-            padding: 20px;
-            height: 100vh;
-            overflow: hidden;
-            position: fixed;
-            float: left;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            color: white;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar ul li a {
-            display: block;
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .sidebar ul li a:hover {
-            background-color: #444;
-        }
-
-        .sidebar ul li i {
-            margin-right: 10px;
-        }
-
-        #main {
-            width: 75%;
-            padding: 20px;
-            margin-left: 270px;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            left: 270px;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        p,
-        ol,
-        ul {
-            margin: 10px 0;
-            line-height: 1.5;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'moderator/css/base.css' %}">
 </head>
 
 <body>

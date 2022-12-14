@@ -1,7 +1,7 @@
 from django.urls import path 
 from . import views
 from django.conf.urls.static import static
-from tweetwave.settings import MEDIA_ROOT, MEDIA_URL, STATIC_ROOT, STATIC_URL
+from tweetwave.settings import MEDIA_ROOT, MEDIA_URL
 
 app_name = 'moderator' 
 
@@ -13,5 +13,3 @@ urlpatterns = [
     path('pending/', views.pending, name='pending'),
     path('flagged/', views.flagged, name='flagged'),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
-
-urlpatterns += static(STATIC_URL, document_root=STATIC_ROOT)
