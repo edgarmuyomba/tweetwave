@@ -5,6 +5,7 @@
         <h1 class="text-center mt-5">Tweetwave Advertising</h1>
         <p class="lead text-center mb-5">Are you interested in advertising your business on Tweetwave? Here's what you
             need to know.</p>
+            <hr>
         <div class="row">
             <div class="col-md-6">
                 <h3>Reach a Large Audience</h3>
@@ -22,22 +23,23 @@
         <div class="row mt-5">
             <div class="col-md-12">
                 <h4>To advertise with us, please fill out the form below and we shall get in touch with you as soon as we can</h4>
+                <br>
                 <form>
                     {% csrf_token %}
                     <div class="form-group mb-3">
-                    <label for="name">Name</label>
+                    <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter your name">
                     </div>
                     <div class="form-group mb-3">
-                    <label for="email">Email address</label>
+                    <label for="email">Email address:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter your email">
                     </div>
                     <div class="form-group mb-3">
-                    <label for="company">Company (Optional)</label>
+                    <label for="company">Company (Optional):</label>
                     <input type="text" class="form-control" id="company" placeholder="Enter your company name">
                     </div>
                     <div class="form-group mb-3">
-                    <label for="message">Description</label>
+                    <label for="message">Description:</label>
                     <textarea class="form-control" id="message" rows="3" placeholder="Enter a short description about your requirements"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary float-right mb-3">Submit</button>
