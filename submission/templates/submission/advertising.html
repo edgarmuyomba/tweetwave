@@ -1,1 +1,51 @@
-i'm making a project called tweetwave. a web application where users can submit confessions and theyre automatically tweeted after review. write for me some html code styled with bootstrap for a page that talks to users about advertising with tweetwave
+{% extends "submission/base.html" %}
+
+{% block content%}
+    <div class="container">
+        <h1 class="text-center mt-5">Tweetwave Advertising</h1>
+        <p class="lead text-center mb-5">Are you interested in advertising your business on Tweetwave? Here's what you
+            need to know.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Reach a Large Audience</h3>
+                <p>With thousands of users tweeting confessions on Tweetwave every day, your ad will be seen by a wide
+                    range of people. Whether you're looking to promote a new product, a sale, or just raise awareness
+                    about your brand, Tweetwave can help you reach your target audience.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Affordable and Flexible</h3>
+                <p>Our advertising options are affordable and flexible, so you can choose the right plan for your
+                    business. You can target your ads by location, interests, and more, and you can easily track the
+                    performance of your ads to see how well they're doing.</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h4>To advertise with us, please fill out the form below and we shall get in touch with you as soon as we can</h4>
+                <form>
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group mb-3">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group mb-3">
+                    <label for="company">Company (Optional)</label>
+                    <input type="text" class="form-control" id="company" placeholder="Enter your company name">
+                    </div>
+                    <div class="form-group mb-3">
+                    <label for="message">Description</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Enter a short description about your requirements"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right mb-3">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content%}
+
+{% block footer%}
+{% endblock footer%}
