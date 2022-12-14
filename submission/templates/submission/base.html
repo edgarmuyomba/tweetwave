@@ -43,21 +43,45 @@
     {% block content %}
     {% endblock content %}
     {% block footer %}
+    
     <footer class="p-3 fixed-bottom container-fluid bg-dark">
-        <p class="d-inline-block mx-5">
-            <a href="{% url 'submission:advertising' %}">Advertising</a>
-        </p>
-        <p class="d-inline-block mx-5">
-            <a href="{% url 'submission:business' %}">Business</a>
-        </p>
-        <p class="d-inline-block mx-5">
-            <a href="{% url 'submission:about' %}">About</a>
-        </p>
-        <p class="d-inline-block mx-5 float-right" style="color: white">
-            Copyright 2022
-            <a href="{% url 'moderator:index' %}">TweetWave</a>
-        </p>
-    </footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="list-inline">
+                <li class="list-inline-item mx-5">
+                  <a href="#">
+                    <img src="{% static 'submission/img/facebook.png' %}" alt="Facebook" style="width:20px;">
+                    Facebook
+                  </a>
+                </li>
+                <li class="list-inline-item mx-5">
+                  <a href="#">
+                    <img src="{% static 'submission/img/twitter.png' %}" alt="Twitter" style="width:20px;">
+                    Twitter
+                  </a>
+                </li>
+                <li class="list-inline-item mx-5">
+                  <a href="#">
+                    <img src="{% static 'submission/img/instagram.png' %}" alt="Instagram" style="width:20px;">
+                    Instagram
+                  </a>
+                </li>
+                <li class="list-inline-item mx-5">
+                  <a href="#">
+                    <img src="{% static 'submission/img/github.png' %}" alt="Github" style="width:20px;">
+                    Github
+                  </a>
+                </li>
+                <li class="list-inline-item mx-5 float-right" style="color: white">
+                    Copyright 2022
+                    <a href="{% url 'moderator:index' %}">TweetWave</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     {% endblock footer %}
 </body>
 

@@ -1,14 +1,15 @@
-var img = document.getElementById("thumbnail");
-img.onclick = function() {
-img.style.width = "500px";
-img.style.height = "500px";
-img.style.position = "fixed";
-img.style.top = "50%";
-img.style.left = "50%";
-img.style.transform = "translate(-50%, -50%)";
-}
-document.onclick = function(event) {
-if (event.target != img) {
-img.style = "";
-}
-}
+<footer class="p-3 fixed-bottom container-fluid bg-dark">
+    <p class="d-inline-block mx-5">
+        <a href="{% url 'submission:advertising' %}">Advertising</a>
+    </p>
+    <p class="d-inline-block mx-5">
+        <a href="{% url 'submission:business' %}">Business</a>
+    </p>
+    <p class="d-inline-block mx-5">
+        <a href="{% url 'submission:about' %}">About</a>
+    </p>
+    <p class="d-inline-block mx-5 float-right" style="color: white">
+        Copyright 2022
+        <a href="{% url 'moderator:index' %}">TweetWave</a>
+    </p>
+</footer>
