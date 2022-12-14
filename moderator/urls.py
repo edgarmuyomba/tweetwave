@@ -13,4 +13,6 @@ urlpatterns = [
     path('pending/', views.pending, name='pending'),
     path('flagged/', views.flagged, name='flagged'),
     path('adverts/', views.adverts, name='adverts'),
+    path('contact/<str:uuid>', views.contact, name='contact'),
+    path('reject/<str:uuid>', views.reject, name='reject'),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
