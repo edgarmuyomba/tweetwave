@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from submission.models import Confession
+from moderator.models import Advert
 from django.contrib.auth.decorators import login_required
 
 def countFlags():
@@ -44,3 +45,9 @@ def flagged(request):
     number = len(flags)
     context = {'flags': flags, 'number': number}
     return render(request, 'moderator/flagged.html', context)
+
+@login_required()
+def adverts(request):
+    adverts = Advert.objects.all()
+    context = {'adverts': adverts, 'number': countFlags()}
+    return render(request, 'moderator/adverts.html', context)

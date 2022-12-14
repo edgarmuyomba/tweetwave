@@ -1,0 +1,17 @@
+{% extends 'moderator/base.html' %}
+
+{% block content %}
+    {% for advert in adverts %}
+        <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{ advert.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ advert.company }}</h6>
+              <p class="card-text">{{ advert.description }}</p>
+              <a href="#" class="btn btn-success btn-sm">Accept</a>
+              <a href="#" class="btn btn-danger btn-sm">Reject</a>
+            </div>
+        </div>     
+    {% empty %}
+        <h3>No pending business requests</h3>
+    {% endfor %}
+{% endblock content %}
