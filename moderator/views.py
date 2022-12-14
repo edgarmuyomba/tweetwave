@@ -66,6 +66,8 @@ def contact(request, uuid):
 
 @login_required()
 def reject(request, uuid):
-    pass
+    advert = Advert.objects.get(uuid=uuid)
+    advert.delete()
+    return redirect('moderator:adverts')
 
 
