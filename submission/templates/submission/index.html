@@ -1,22 +1,24 @@
 {% extends "submission/base.html" %}
 
 {% block content %}
-  <main role="main" id="main" class="bg-red-500">
-    <h1 class="text-3xl font-bold underline">
-      <a href="{% url 'submission:index' %}">
-        TweetWave
-      </a>
-    </h1>
-    <form class="form p-1" action="{% url 'submission:saved' %}" style="width: 700px" method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="row">
-        <!-- <div class="col-10"> -->
-          <input type="text" id="tweet" class="form-control" name="tweet" placeholder="Enter your submission">
-        <!-- </div> -->
-        <!-- <div class="col-2"> -->
-          <input type="file" id="attachment" name="attachment" class="fas fa-paperclip fa-lg">
-        <!-- </div> -->
-        <input type="submit" value="Submit" class="btn btn-secondary mt-3 mx-auto"">
+<main role="main" id="main" class="bg-red-500">
+  <h1 class="text-3xl font-bold underline">
+    <a href="{% url 'submission:index' %}">
+      TweetWave
+    </a>
+  </h1>
+  <form class="form p-1" action="{% url 'submission:saved' %}" style="width: 700px" method="POST"
+    enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <!-- <div class="col-10"> -->
+      <!-- <input type="text" id="tweet" class="form-control" name="tweet" placeholder="Enter your submission"> -->
+      <textarea name="tweet" id="tweet" cols="30" rows="10" placeholder="Enter your submission"></textarea>
+      <!-- </div> -->
+      <!-- <div class="col-2"> -->
+      <input type="file" id="attachment" name="attachment" class="fas fa-paperclip fa-lg">
+      <!-- </div> -->
+      <input type="submit" value="Submit" class="btn btn-secondary mt-3 mx-auto"">
       </div>
     </form>
   </main>
