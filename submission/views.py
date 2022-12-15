@@ -17,8 +17,17 @@ def saved(request):
         return redirect('submission:index')
 
 def advertising(request):
-    context = {}
-    return render(request, 'submission/advertising.html', context)
+    if request.method != 'POST':
+        context = {}
+        return render(request, 'submission/advertising.html', context)
+    else:
+        name = request.POST['name']
+        email = request.POST['email']
+        company = request.POST['company']
+        description = request.POST['messsage']
+        newConfession = Confession.objects(name=name, email=email, company=company, description=message)
+        newConfession.save()
+        return redirect('submission:index')
 
 def business(request):
     context = {}
